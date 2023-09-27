@@ -20,7 +20,7 @@ st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 
 #path = "C:/Users/jr/OneDrive - EMD International A S/Python Projects/jr_projects/energygame/"
-path = "c:/Users/sba/OneDrive - EMD International A S/energygame - Jonathan Refsgaards filer/"
+# path = "c:/Users/sba/OneDrive - EMD International A S/energygame - Jonathan Refsgaards filer/"
 # conn = sqlite3.connect(path + "forslag.db")
 # conn.execute("DROP TABLE IF EXISTS SETTINGS")
 # conn.execute("CREATE TABLE SETTINGS (NAME CHAR(50), EMAIL CHAR(50), VARMEPUMPE, ELKEDEL, AKKU)")
@@ -55,7 +55,7 @@ else:
         if is_valid_email(email):
             send = st.button("Send forslag")
             if send:
-                conn = sqlite3.connect(path + "forslag.db")
+                conn = sqlite3.connect("forslag.db")
                 # Define the SQL query with placeholders for data
                 query = "INSERT INTO SETTINGS (NAME, EMAIL, VARMEPUMPE, ELKEDEL, AKKU) VALUES (?, ?, ?, ?, ?)"
                 conn.execute(query, (navn, email, vp, ek, ak))
